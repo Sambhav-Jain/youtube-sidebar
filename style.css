@@ -6,34 +6,114 @@ body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
 }
 nav{
     background-color: #fff;
     height: 60px;
     width:100%;
     display: flex;
+    position: fixed;
+    top:0;
 }
 nav ul{
     list-style: none;
     display: flex;
     height:100%;
-    width:50%;
+    width:100%;
     align-items: center;
-    justify-content: space-evenly;
-    padding-left: 5rem;
+    justify-content:center;
+    margin:0 auto;
 }
-li{
+nav ul li{
     font-size: 1.3rem;
     height: 100%;
     display: flex;
     align-items: center;
-    padding:5px;
-    cursor: pointer;
+    padding:15px;
+    margin-left: 1rem;
+    font-weight: 700;
     transition: 300ms ease-in-out;
 }
-li:hover{
+
+nav ul li:hover{
     background-color: #f0f0f0;
-    font-weight: 500;
     border-bottom: 4px solid #b6144a;
    
+}
+nav ul li a{
+    color: #555;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color:#111;
+}
+.btn-toggle{
+    width:inherit;
+    height: 60px;
+    background-color: #03dac6;
+    transform: 500ms ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 300ms ease-in-out;
+}
+.btn-toggle img{
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+.btn-toggle img:focus-within{
+    opacity: 0.8;
+    border-radius:50%;
+}
+.sidebar{
+    position: fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:62px;
+    background-color: #1b1b1b;
+    color:#fcf;
+    height:100vh;
+    z-index: 9999;
+    transition: 300ms ease-in-out;
+}
+.sidebar ul{
+    padding-top: 1rem;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+}       
+.sidebar li{
+    line-height: 60px;
+    list-style: none;
+}
+.sidebar li a, .sidebar ul span{
+    display: block;
+    height: 60px;
+    padding:0 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:#ddd;
+    white-space: nowrap;
+    border-bottom: 2px solid #222;
+}
+.sidebar li >span{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 900;
+    color:#03dac6;
+    border: none;
+}
+.sidebar li a:hover{
+    color:#111;
+    text-align: center;
+    background-color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    color:#03dac6;
 }
